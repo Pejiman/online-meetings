@@ -235,13 +235,7 @@ def check_invalid_login_error(page):
     log_result("تست ورود ناموفق با نام پسورد اشتباه", success=True)
 
 
-
-
 # ========== تست چهارم: کد کپچا ی اشتباه ==========
-
-
-
-
 
 
 @pytest.mark.order(4)
@@ -288,3 +282,7 @@ def check_invalid_login_error(page):
     sleep(2)
     expect(page.locator("text='خطا در ورود به سامانه'")).to_be_visible()
     log_result("تست ورود ناموفق با کد کپچا اشتباه", success=True)
+
+
+
+# ========== تست پنجم: عدم درج نام کاربری ==========
