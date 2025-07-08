@@ -147,7 +147,7 @@ def test_Login_incorrect_username():
 
 
 @given("کاربر در صفحه ورود به سامانه قرار دارد")
-def open_login_page_wrong_user(page):
+def open_login_page_username_error(page):
     page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
 
 
@@ -175,14 +175,14 @@ def click_login_button_wrong_user(page):
     sleep(1)
 
 
-@then(parsers.parse("پیغام خطای خطا در ورود به سامانه نمایش داده می‌شود"))
+@then(parsers.parse("پیغام خطای ورود با نام کاربری اشتباه نمایش داده می‌شود"))
 
 @log_step("تست ورود ناموفق با نام کاربری اشتباه")
 
 def check_invalid_login_error(page):
     sleep(2)
     expect(page.locator("text='خطا در ورود به سامانه'")).to_be_visible()
-    log_result("تست ورود ناموفق با نام کاربری اشتباه", success=True)
+    log_result("تست عدم ورود با نام کاربری اشتباه", success=True)
 
 
 
@@ -196,7 +196,7 @@ def test_Login_incorrect_Password():
 
 
 @given("کاربر در صفحه ورود به سامانه قرار دارد")
-def open_login_page_wrong_user(page):
+def open_login_page_password_error(page):
     page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
 
 
@@ -225,14 +225,14 @@ def click_login_button_wrong_user(page):
     sleep(1)
 
 
-@then(parsers.parse("پیغام خطای خطا در ورود به سامانه نمایش داده می‌شود"))
+@then(parsers.parse("پیغام خطای ورود با رمز عبور اشتباه نمایش داده می‌شود"))
 
 @log_step("تست ورود ناموفق با پسورد اشتباه")
 
-def check_invalid_login_error(page):
+def check_invalid_password_error(page):
     sleep(2)
     expect(page.locator("text='خطا در ورود به سامانه'")).to_be_visible()
-    log_result("تست ورود ناموفق با نام پسورد اشتباه", success=True)
+    log_result("تست عدم ورود با پسورد اشتباه", success=True)
 
 
 # ========== تست چهارم: کد کپچا ی اشتباه ==========
@@ -245,7 +245,7 @@ def test_Login_incorrect_captcha():
 
 
 @given("کاربر در صفحه ورود به سامانه قرار دارد")
-def open_login_page_wrong_user(page):
+def open_login_page_captcha_error(page):
     page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
 
 
@@ -274,15 +274,63 @@ def click_login_button_wrong_user(page):
     sleep(3)
 
 
-@then(parsers.parse("پیغام خطای خطا در ورود به سامانه نمایش داده می‌شود"))
+@then(parsers.parse("پیغام خطای ورود با کد کپچا اشتباه نمایش داده می‌شود"))
 
 @log_step("تست ورود ناموفق با کد کپچا اشتباه")
 
-def check_invalid_login_error(page):
+def check_invalid_captcha_error(page):
     sleep(2)
     expect(page.locator("text='خطا در ورود به سامانه'")).to_be_visible()
-    log_result("تست ورود ناموفق با کد کپچا اشتباه", success=True)
+    log_result("تست عدم ورود با کد کپچا اشتباه", success=True)
 
 
 
 # ========== تست پنجم: عدم درج نام کاربری ==========
+
+
+
+
+@pytest.mark.order(5)
+@scenario("../features/login.feature", "Login without username")
+def test_Login_without_username():
+    pass
+
+
+@given("کاربر در صفحه ورود به سامانه قرار دارد")
+def open_login_page_without_username(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+
+
+@when("کاربر نام کاربری را وارد نمی‌کند")
+def fill_without_username(page):
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("")
+    sleep(0.5)
+
+
+@when("کاربر رمز عبور و کد امنیتی معتبر را وارد می‌کند")
+def fill_correct_password1_and_captcha1(page):
+    sleep(0.5)
+    page.get_by_placeholder(" رمز عبور را وارد کنید").fill("0081071523")
+    sleep(0.5)
+    page.get_by_placeholder("کد امنیتی را وارد کنید").fill("PASSED")
+    sleep(0.5)
+
+
+@when("کاربر روی دکمه ورود کلیک می‌کند")
+def click_login_button_without_user(page):
+
+    sleep(0.5)
+    page.get_by_role("button", name="ورود").click()
+    sleep(1)
+
+
+@then(parsers.parse("پیغام خطای ورود با عدم درج نام کاربری نمایش داده می‌شود"))
+
+@log_step("تست ورود ناموفق با نام کاربری اشتباه")
+
+def check_invalid_login_error_without_username(page):
+    sleep(2)
+    expect(page.locator("text='فیلد الزامی است.'")).to_be_visible()
+    log_result("تست عدم ورود بدلیل عدم درج نام کاربری", success=True)
+
