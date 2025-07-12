@@ -147,7 +147,7 @@ def check_dashboard_loaded(page):
         print("❌ ثبت نام موفق نبود یا داشبورد ظاهر نشد.")
         page.screenshot(path="./screenshots/failure_dashboard.png")
         raise e  
-
+    log_result("ثبت‌نام صحیح", success=True)
 # ========== تست دوم: ورود ناموفق با عدم ثبت نام ==========
 
 
@@ -208,7 +208,7 @@ def check_dashboard_loaded(page):
         print("❌ فیلد نام به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
         raise e  
-    
+    log_result("ثبت‌نام بدون نام", success=True)
 
     # ==========  تست سوم: ورود ناموفق با عدم ثبت نام خانوادگی ==========
 
@@ -269,3 +269,4 @@ def check_dashboard_loaded(page):
         print("❌ فیلد نام خانوادگی به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
         raise e  
+    log_result("ثبت‌نام بدون نام خانوادگی", success=True)
