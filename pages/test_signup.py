@@ -799,3 +799,143 @@ def check_dashboard_loaded(page):
         page.screenshot(path="./screenshots/failure_dashboard.png")
         raise e  
     log_result("ثبت‌نام با شماره موبایل کمتر از 11 کاراکتر", success=True)
+
+
+    
+# ==========  تست چهاردهم: ورود ناموفق با ثبت تاریخ تولد کمتر از 18 سال
+
+@pytest.mark.order(14)
+@scenario("../features/signup.feature", "signup without Minimum age requirement")
+def test_signup_without_Minimum_age_requirement():
+    pass
+
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد تاریخ تولد تکمیل می کند")
+def fill_signup_without_Minimum_age_requirement(page):
+
+
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پژمان")
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزچی")
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("0081071523")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد تاریخ تولد را برای سن کمتر از 18 سال پر می کند")
+def fill__Minimum_age_requirement(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1400/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_signup_without_Minimumage_requirement(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام تاریخ تولد باید بزرگتر از 18 سال باشد نمایش داده می‌شود")
+def check_dashboard_loaded(page):
+    try:
+       
+        expect(page.locator("text=شما باید بیش از 18 ساله و کمتر از 120 ساله باشید")).to_be_visible(timeout=15000)
+        print("✅ فیلد تاریخ تولد به درستی بیش از 18 ساله و کمتر از 120 ساله می باشد")
+    except Exception as e:
+        print("❌ فیلد شماره موبایل به اشتباه بیش از 18 ساله و کمتر از 120 ساله نمی باشد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("ثبت‌نام با تاریخ تولد بیشتر از 18 سال", success=True)
+
+
+      
+# ==========  تست پانزده: ورود ناموفق با ثبت تاریخ تولد بیشتر از 120 سال
+
+@pytest.mark.order(15)
+@scenario("../features/signup.feature", "signup without Maximum age requirement")
+def test_signup_without_Maximum_age_requirement():
+    pass
+
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد تاریخ تولد تکمیل می کند")
+def fill_signup_without_Maximum_age_requirement(page):
+
+
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پژمان")
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزچی")
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("0081071523")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد تاریخ تولد را برای سن بیشتر از 120 سال پر می کند")
+def fill__Maximum_age_requirement(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1200/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_signup_without_Maximumage_requirement(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام تاریخ تولد باید کوچکتر از 120 سال باشد نمایش داده می‌شود")
+def check_dashboard_loaded(page):
+    try:
+       
+        expect(page.locator("text=شما باید بیش از 18 ساله و کمتر از 120 ساله باشید")).to_be_visible(timeout=15000)
+        print("✅ فیلد تاریخ تولد به درستی بیش از 18 ساله و کمتر از 120 ساله می باشد")
+    except Exception as e:
+        print("❌ فیلد شماره موبایل به اشتباه بیش از 18 ساله و کمتر از 120 ساله نمی باشد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("ثبت‌نام با تاریخ تولد کمتر از 120 سال", success=True)
