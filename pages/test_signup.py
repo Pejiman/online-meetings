@@ -143,11 +143,14 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=ثبت نام با موفقیت انجام شد")).to_be_visible(timeout=15000)
         print("✅ ثبت نام موفق و داشبورد نمایش داده شد.")
+        log_result("ثبت‌نام صحیح", success=True)
     except Exception as e:
         print("❌ ثبت نام موفق نبود یا داشبورد ظاهر نشد.")
         page.screenshot(path="./screenshots/failure_dashboard.png")
-        raise e  
-    log_result("ثبت‌نام صحیح", success=True)
+        log_result("ثبت‌نام صحیح", success=True)
+        raise e
+
+
 # ========== تست دوم: ثبت ناموفق با عدم ثبت نام ==========
 
 
@@ -204,11 +207,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=فیلد الزامی است.")).to_be_visible(timeout=15000)
         print("✅ فیلد نام به درستی اجباری می باشد")
+        log_result("ثبت‌نام بدون نام", success=True)
     except Exception as e:
         print("❌ فیلد نام به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام بدون نام", success=True)
         raise e  
-    log_result("ثبت‌نام بدون نام", success=True)
 
     # ==========  تست سوم: ثبت ناموفق با عدم ثبت نام خانوادگی ==========
 
@@ -265,11 +269,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=فیلد الزامی است.")).to_be_visible(timeout=15000)
         print("✅ فیلد نام خانوادگی به درستی اجباری می باشد")
+        log_result("ثبت‌نام بدون نام خانوادگی", success=True)
     except Exception as e:
         print("❌ فیلد نام خانوادگی به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام بدون نام خانوادگی", success=True)
         raise e  
-    log_result("ثبت‌نام بدون نام خانوادگی", success=True)
 
 
         # ==========  تست چهارم: ثبت ناموفق با عدم ثبت کد ملی ==========
@@ -327,11 +332,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=کد ملی باید 10 رقم باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد کد ملی به درستی اجباری می باشد")
+        log_result("ثبت‌نام بدون کد ملی", success=True)
     except Exception as e:
         print("❌ فیلد کد ملی به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام بدون کد ملی", success=True)
         raise e  
-    log_result("ثبت‌نام بدون کد ملی", success=True)
 
 
  # ==========  تست پنجم: ثبت ناموفق با عدم ثبت موبایل ==========
@@ -389,11 +395,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=شماره موبایل باید 11 رقم باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد شماره موبایل به درستی اجباری می باشد")
+        log_result("ثبت‌نام بدون شماره موبایل", success=True)
     except Exception as e:
         print("❌ فیلد شماره موبایل به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام بدون شماره موبایل", success=True)
         raise e  
-    log_result("ثبت‌نام بدون شماره موبایل", success=True)
 
 
 
@@ -448,11 +455,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=فیلد الزامی است.")).to_be_visible(timeout=15000)
         print("✅ فیلد تاریخ تولد به درستی اجباری می باشد")
+        log_result("ثبت‌نام بدون تاریخ تولد", success=True)
     except Exception as e:
         print("❌ فیلد تاریخ تولد به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام بدون تاریخ تولد", success=True)
         raise e  
-    log_result("ثبت‌نام بدون تاریخ تولد", success=True)
 
 
 # ==========  تست هفتم: ثبت ناموفق با عدم ثبت پسورد ==========
@@ -511,11 +519,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=فیلد الزامی است.")).to_be_visible(timeout=15000)
         print("✅ فیلد پسورد به درستی اجباری می باشد")
+        log_result("ثبت‌نام بدون پسورد", success=True)
     except Exception as e:
         print("❌ فیلد پسورد به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام بدون پسورد", success=True)
         raise e  
-    log_result("ثبت‌نام بدون پسورد", success=True)
 
 
 
@@ -575,20 +584,154 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=فیلد الزامی است.")).to_be_visible(timeout=15000)
         print("✅ فیلد تکرار پسورد به درستی اجباری می باشد")
+        log_result("ثبت‌نام بدون تکرار پسورد", success=True)
     except Exception as e:
         print("❌ فیلد تکرار پسورد به اشتباه اجباری نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام بدون تکرار پسورد", success=True)
         raise e  
-    log_result("ثبت‌نام بدون تکرار پسورد", success=True)
 
 
 
 # ==========  تست نهم: ثبت ناموفق با ثبت  کمتر از 2 کاراکتر در فیلد نام ==========
 
+@pytest.mark.order(9)
+@scenario("../features/signup.feature", "signup without Enter less than 2 characters in the name field")
+def test_signup_Enter_less_than_2_characters_in_the_name_field():
+    pass
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد نام تکمیل می کند")
+def fill_signup_Enter_less_than_2_characters_in_the_name_field(page):
+    
+    national_code2 = generate_valid_national_code()
+
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").click()
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزچی")
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill(national_code2)
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1367/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
 
 
-# ==========  تست دهم: ثبت ناموفق با ثبت  بیشتر از 40 کاراکتر در فیلد نام خانوادگی ==========
+@when("کاربر فیلد نام را با 1 کاراکتر پر می کند")
+def fill_Enter_less_than_2_characters_in_the_name_field(page):
 
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پ")
+    sleep(0.5)
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_Enter_less_than_2charactersinthename_field(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام نام می بایست حداقل 2 کاراکتر باشد نمایش داده می‌شود")
+def check_dashboard_loaded_4(page):
+    try:
+        expect(page.locator("text=نام باید حداقل 2 کاراکتر باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد نام به درستی درصورت درج کاراکتر کمتر از 2 پیغام خطا نمایش می دهد ")
+        log_result("درج نام با کمتر از 2 کاراکتر", success=True)
+    except Exception as e:
+        print("❌ فیلد نام به اشتباه درصورت درج کاراکتر کمتر از 2 پیغام خطا نمایش نمی دهد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("درج نام با کمتر از 2 کاراکتر", success=False)
+        raise e
+
+
+# ==========  تست دهم: ثبت ناموفق با ثبت  بیشتر از 60 کاراکتر در فیلد نام خانوادگی ==========
+
+@pytest.mark.order(10)
+@scenario("../features/signup.feature", "signup without Enter more than 60 characters in the last name field")
+def test_signup_Enter_more_than_60_characters_in_the_last_name_field():
+    pass
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد نام خانوادگی تکمیل می کند")
+def fill_signup_Enter_more_than_60_characters_in_the_last_name_field(page):
+    
+    national_code3 = generate_valid_national_code()
+
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پژمان")
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill(national_code3)
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1367/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد نام خانوادگی را با بیش از 60 کاراکتر پر می کند")
+def fill_Enter_more_than_60_characters_in_the_last_name_field(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").click()
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزجی رنجی دیزجی رنجی دیزجی رنجی دیزجی رنجی دیزجی رنجی دیزجی رنجی دیزجی رنجی دیزجی رنجی دیزجی رنجی دیزجی")
+    sleep(0.5)
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_Enter_more_than_60_characters_in_the_lastname_field(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام نام خانوادگی می بایست حداکثر 60 کاراکتر باشد نمایش داده می‌شود")
+def check_dashboard_loaded_7(page):
+    try:
+        expect(page.locator("text=نام خانوادگی باید حداکثر 60 کاراکتر باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد نام خانوادگی به درستی درصورت درج کاراکتر بیشتر از 60 پیغام خطا نمایش می دهد ")
+        log_result("درج نام خانوادکی با بیش از 60 کاراکتر", success=True)
+    except Exception as e:
+        print("❌ فیلد نام خانوادگی به اشتباه درصورت درج کاراکتر بیشتر از 60 پیغام خطا نمایش نمی دهد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("درج نام خانوادکی با بیش از 60 کاراکتر", success=False)
+        raise e
 
 
 
@@ -654,11 +797,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=کد ملی باید 10 رقم باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد کد ملی به درستی 10 کاراکتر می باشد")
+        log_result("ثبت‌نام با کد ملی کمتر از 10 کاراکتر", success=True)
     except Exception as e:
         print("❌ فیلد کد ملی به اشتباه 10 کاراکتر نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام با کد ملی کمتر از 10 کاراکتر", success=True)
         raise e  
-    log_result("ثبت‌نام با کد ملی کمتر از 10 کاراکتر", success=True)
 
 
 # ==========  تست دوازدهم: ثبت ناموفق با ثبت  کد ملی نا معتبر ==========
@@ -722,11 +866,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=کد ملی وارد شده اشتباه است")).to_be_visible(timeout=15000)
         print("✅ خطای کد ملی نا معتبر به درستی نمایش داده شده")
+        log_result("ثبت‌نام با کد ملی نا معتبر", success=True)
     except Exception as e:
         print("❌ خطای کد ملی نا معتبر به اشتباه نمایش داده نشده")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام با کد ملی نا معتبر", success=True)
         raise e  
-    log_result("ثبت‌نام با کد ملی نا معتبر", success=True)
 
 
 
@@ -792,11 +937,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=شماره موبایل باید 11 رقم باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد شماره موبایل به درستی 11 کاراکتر می باشد")
+        log_result("ثبت‌نام با شماره موبایل کمتر از 11 کاراکتر", success=True)
     except Exception as e:
         print("❌ فیلد شماره موبایل به اشتباه 11 کاراکتر نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام با شماره موبایل کمتر از 11 کاراکتر", success=True)
         raise e  
-    log_result("ثبت‌نام با شماره موبایل کمتر از 11 کاراکتر", success=True)
 
 
     
@@ -862,11 +1008,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=شما باید بیش از 18 ساله و کمتر از 120 ساله باشید")).to_be_visible(timeout=15000)
         print("✅ فیلد تاریخ تولد به درستی بیش از 18 ساله و کمتر از 120 ساله می باشد")
+        log_result("ثبت‌نام با تاریخ تولد بیشتر از 18 سال", success=True)
     except Exception as e:
         print("❌ فیلد شماره موبایل به اشتباه بیش از 18 ساله و کمتر از 120 ساله نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام با تاریخ تولد بیشتر از 18 سال", success=True)
         raise e  
-    log_result("ثبت‌نام با تاریخ تولد بیشتر از 18 سال", success=True)
 
 
       
@@ -932,11 +1079,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=شما باید بیش از 18 ساله و کمتر از 120 ساله باشید")).to_be_visible(timeout=15000)
         print("✅ فیلد تاریخ تولد به درستی بیش از 18 ساله و کمتر از 120 ساله می باشد")
+        log_result("ثبت‌نام با تاریخ تولد کمتر از 120 سال", success=True)
     except Exception as e:
         print("❌ فیلد شماره موبایل به اشتباه بیش از 18 ساله و کمتر از 120 ساله نمی باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام با تاریخ تولد کمتر از 120 سال", success=True)
         raise e  
-    log_result("ثبت‌نام با تاریخ تولد کمتر از 120 سال", success=True)
 
 
 
@@ -1005,11 +1153,12 @@ def check_dashboard_loaded_1(page):
        
         expect(page.locator("text=رمز عبور باید حداقل 8 رقم باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد رمز عبور به درستی نمیتواند کمتر از 8 کاراکتر باشد")
+        log_result("رمز عبور با کمتر از 8 کاراکتر", success=True)
     except Exception as e:
         print("❌ فیلد رمز عبور به اشتباه میتواند کمتر از 8 کاراکتر باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("رمز عبور با کمتر از 8 کاراکتر", success=True)
         raise e  
-    log_result("رمز عبور با کمتر از 8 کاراکتر", success=True)
 
 
 
@@ -1031,11 +1180,12 @@ def check_dashboard_loaded_2(page):
        
         expect(page.locator("text=رمز عبور باید حداقل یک حرف بزرگ داشته باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد رمز عبور به درستی نمیتواند حداقل یک حرف بزرگ داشته باشد")
+        log_result("رمز عبور با حداقل یک حرف بزرگ", success=True)
     except Exception as e:
         print("❌ فیلد رمز عبور به اشتباه میتواند یک حرف بزرگ نداشته باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("رمز عبور با حداقل یک حرف بزرگ", success=True)
         raise e  
-    log_result("رمز عبور با حداقل یک حرف بزرگ", success=True)
 
 
 
@@ -1056,11 +1206,12 @@ def check_dashboard_loaded_3(page):
        
         expect(page.locator("text=رمز عبور باید حداقل یک علامت خاص داشته باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد رمز عبور به درستی نمیتواند حداقل یک حرف خاص داشته باشد")
+        log_result("رمز عبور با حداقل یک حرف خاص", success=True)
     except Exception as e:
         print("❌ فیلد رمز عبور به اشتباه میتواند یک حرف خاص نداشته باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("رمز عبور با حداقل یک حرف خاص", success=True)
         raise e  
-    log_result("رمز عبور با حداقل یک حرف خاص", success=True)
 
 
 
@@ -1127,11 +1278,12 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=رمز عبور و تکرار آن یکسان نمی باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد تکرار رمز عبور به درستی نمیتواند متفاوت از فیلد رمز عبور باشد")
+        log_result("تکرار رمز عبور نا برابر با رمز عبور", success=True)
     except Exception as e:
         print("❌ فیلد تکرار رمز عبور به اشتباه میتواند متفاوت از فیلد رمز عبور باشد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("تکرار رمز عبور نا برابر با رمز عبور", success=True)
         raise e  
-    log_result("تکرار رمز عبور نا برابر با رمز عبور", success=True)
 
 
 
@@ -1194,11 +1346,12 @@ def check_dashboard_loaded_1(page):
        
         expect(page.locator("text=نام باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد نام به درستی درصورت درج کاراکتر نا معتبر پیغام خطا نمایش می دهد ")
+        log_result("درج نام با کاراکتر های نا معتبر", success=True)
     except Exception as e:
         print("❌ فیلد نام به اشتباه درصورت درج کاراکتر نا معتبر پیغام خطا نمایش نمی دهد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("درج نام با کاراکتر های نا معتبر", success=True)
         raise e  
-    log_result("درج نام با کاراکتر های نا معتبر", success=True)
 
 
 
@@ -1220,11 +1373,12 @@ def check_dashboard_loaded_2(page):
        
         expect(page.locator("text=نام خانوادگی باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد نام خانوادگی به درستی درصورت درج کاراکتر نا معتبر پیغام خطا نمایش می دهد ")
+        log_result("درج نام خانوادگی با کاراکتر های نا معتبر", success=True)
     except Exception as e:
         print("❌ فیلد نام خانوادگی به اشتباه درصورت درج کاراکتر نا معتبر پیغام خطا نمایش نمی دهد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("درج نام خانوادگی با کاراکتر های نا معتبر", success=True)
         raise e  
-    log_result("درج نام خانوادگی با کاراکتر های نا معتبر", success=True)
 
 
 
@@ -1287,11 +1441,12 @@ def check_dashboard_loaded_3(page):
        
         expect(page.locator("text=نام باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد نام به درستی درصورت درج کاراکتر انگلیسی پیغام خطا نمایش می دهد ")
+        log_result("درج نام با کاراکتر های انگلیسی", success=True)
     except Exception as e:
         print("❌ فیلد نام به اشتباه درصورت درج کاراکتر انگلیسی پیغام خطا نمایش نمی دهد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("درج نام با کاراکتر های انگلیسی", success=True)
         raise e  
-    log_result("درج نام با کاراکتر های انگلیسی", success=True)
 
 
 
@@ -1313,11 +1468,12 @@ def check_dashboard_loaded_4(page):
        
         expect(page.locator("text=نام خانوادگی باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
         print("✅ فیلد نام خانوادگی به درستی درصورت درج کاراکتر انگلیسی پیغام خطا نمایش می دهد ")
+        log_result("درج نام خانوادگی با کاراکتر های انگلیسی", success=True)
     except Exception as e:
         print("❌ فیلد نام خانوادگی به اشتباه درصورت درج کاراکتر انگلیسی پیغام خطا نمایش نمی دهد")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("درج نام خانوادگی با کاراکتر های انگلیسی", success=True)
         raise e  
-    log_result("درج نام خانوادگی با کاراکتر های انگلیسی", success=True)
 
 
 
@@ -1382,12 +1538,13 @@ def check_dashboard_loaded(page):
        
         expect(page.locator("text=متقاضی با این کد ملی قبلا ثبت شده است.")).to_be_visible(timeout=15000)
         print("✅ خطای کد ملی تکراری به درستی نمایش داده شده")
+        log_result("ثبت‌نام با کد ملی تکراری", success=True)
     except Exception as e:
         print("❌ خطای کد ملی تکراری به اشتباه نمایش داده نشده")
         page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام با کد ملی تکراری", success=True)
         raise e  
-    log_result("ثبت‌نام با کد ملی تکراری", success=True)
-
+ 
 
       
 # # ==========  تست بیست و یکم: ثبت ناموفق با ثبت تاریخ تولد با فرمت نادرست
