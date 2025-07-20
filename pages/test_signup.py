@@ -87,7 +87,7 @@ def generate_valid_national_code():
     return ''.join(map(str, code))
 
 
-# ========== تست اول: ورود صحیح ==========
+# ========== تست اول: ثبت صحیح ==========
 
 @pytest.mark.order(1)
 @scenario("../features/signup.feature", "Correct signup")
@@ -148,7 +148,7 @@ def check_dashboard_loaded(page):
         page.screenshot(path="./screenshots/failure_dashboard.png")
         raise e  
     log_result("ثبت‌نام صحیح", success=True)
-# ========== تست دوم: ورود ناموفق با عدم ثبت نام ==========
+# ========== تست دوم: ثبت ناموفق با عدم ثبت نام ==========
 
 
 @pytest.mark.order(2)
@@ -210,7 +210,7 @@ def check_dashboard_loaded(page):
         raise e  
     log_result("ثبت‌نام بدون نام", success=True)
 
-    # ==========  تست سوم: ورود ناموفق با عدم ثبت نام خانوادگی ==========
+    # ==========  تست سوم: ثبت ناموفق با عدم ثبت نام خانوادگی ==========
 
 
 @pytest.mark.order(3)
@@ -272,7 +272,7 @@ def check_dashboard_loaded(page):
     log_result("ثبت‌نام بدون نام خانوادگی", success=True)
 
 
-        # ==========  تست چهارم: ورود ناموفق با عدم ثبت کد ملی ==========
+        # ==========  تست چهارم: ثبت ناموفق با عدم ثبت کد ملی ==========
 
 
 @pytest.mark.order(4)
@@ -334,7 +334,7 @@ def check_dashboard_loaded(page):
     log_result("ثبت‌نام بدون کد ملی", success=True)
 
 
- # ==========  تست پنجم: ورود ناموفق با عدم ثبت موبایل ==========
+ # ==========  تست پنجم: ثبت ناموفق با عدم ثبت موبایل ==========
 
 
 @pytest.mark.order(5)
@@ -397,7 +397,7 @@ def check_dashboard_loaded(page):
 
 
 
-# ==========  تست ششم: ورود ناموفق با عدم ثبت تاریخ تولد ==========
+# ==========  تست ششم: ثبت ناموفق با عدم ثبت تاریخ تولد ==========
 
 
 @pytest.mark.order(6)
@@ -455,7 +455,7 @@ def check_dashboard_loaded(page):
     log_result("ثبت‌نام بدون تاریخ تولد", success=True)
 
 
-# ==========  تست هفتم: ورود ناموفق با عدم ثبت پسورد ==========
+# ==========  تست هفتم: ثبت ناموفق با عدم ثبت پسورد ==========
 
 
 @pytest.mark.order(7)
@@ -519,7 +519,7 @@ def check_dashboard_loaded(page):
 
 
 
-# ==========  تست هشتم: ورود ناموفق با عدم ثبت  تکرار پسورد ==========
+# ==========  تست هشتم: ثبت ناموفق با عدم ثبت  تکرار پسورد ==========
 
 
 @pytest.mark.order(8)
@@ -583,16 +583,16 @@ def check_dashboard_loaded(page):
 
 
 
-# ==========  تست نهم: ورود ناموفق با ثبت  کمتر از 2 کاراکتر در فیلد نام ==========
+# ==========  تست نهم: ثبت ناموفق با ثبت  کمتر از 2 کاراکتر در فیلد نام ==========
 
 
 
-# ==========  تست دهم: ورود ناموفق با ثبت  بیشتر از 40 کاراکتر در فیلد نام خانوادگی ==========
+# ==========  تست دهم: ثبت ناموفق با ثبت  بیشتر از 40 کاراکتر در فیلد نام خانوادگی ==========
 
 
 
 
-# ==========  تست یازدهم: ورود ناموفق با ثبت  کد ملی کمتر از 10 کاراکتر ==========
+# ==========  تست یازدهم: ثبت ناموفق با ثبت  کد ملی کمتر از 10 کاراکتر ==========
 
 
 @pytest.mark.order(11)
@@ -661,9 +661,7 @@ def check_dashboard_loaded(page):
     log_result("ثبت‌نام با کد ملی کمتر از 10 کاراکتر", success=True)
 
 
-# ==========  تست دوازدهم: ورود ناموفق با ثبت  کد ملی نا معتبر ==========
-
-
+# ==========  تست دوازدهم: ثبت ناموفق با ثبت  کد ملی نا معتبر ==========
 
 @pytest.mark.order(12)
 @scenario("../features/signup.feature", "signup without Invalid national code")
@@ -732,7 +730,7 @@ def check_dashboard_loaded(page):
 
 
 
-# ==========  تست سیزدهم: ورود ناموفق با ثبت شماره موبایل کمتر از 11 کاراکتر ==========
+# ==========  تست سیزدهم: ثبت ناموفق با ثبت شماره موبایل کمتر از 11 کاراکتر ==========
 
 
 @pytest.mark.order(13)
@@ -802,7 +800,7 @@ def check_dashboard_loaded(page):
 
 
     
-# ==========  تست چهاردهم: ورود ناموفق با ثبت تاریخ تولد کمتر از 18 سال
+# ==========  تست چهاردهم: ثبت ناموفق با ثبت تاریخ تولد کمتر از 18 سال
 
 @pytest.mark.order(14)
 @scenario("../features/signup.feature", "signup without Minimum age requirement")
@@ -872,7 +870,7 @@ def check_dashboard_loaded(page):
 
 
       
-# ==========  تست پانزده: ورود ناموفق با ثبت تاریخ تولد بیشتر از 120 سال
+# ==========  تست پانزده: ثبت ناموفق با ثبت تاریخ تولد بیشتر از 120 سال
 
 @pytest.mark.order(15)
 @scenario("../features/signup.feature", "signup without Maximum age requirement")
@@ -939,3 +937,524 @@ def check_dashboard_loaded(page):
         page.screenshot(path="./screenshots/failure_dashboard.png")
         raise e  
     log_result("ثبت‌نام با تاریخ تولد کمتر از 120 سال", success=True)
+
+
+
+
+
+    # ==========  تست شانزدهم: ثبت ناموفق با ثبت پسورد ساده
+
+@pytest.mark.order(16)
+@scenario("../features/signup.feature", "signup without easy password")
+def test_signup_without_easy_password():
+    pass
+
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد پسورد تکمیل می کند")
+def fill_signup_without_easypassword(page):
+
+
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پژمان")
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزچی")
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("0081071523")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1367/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد پسورد را با تعداد کاراکتر کمتر از 8 کاراکتر تکمیل می کند")
+def fill__easy_password_11(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("123456")
+    sleep(0.5)
+   
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_signup_without_easy_password(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام تعداد کاراکتر می بایست حداقل 8 کاراکتر باشد نمایش داده می‌شود")
+def check_dashboard_loaded_1(page):
+    try:
+       
+        expect(page.locator("text=رمز عبور باید حداقل 8 رقم باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد رمز عبور به درستی نمیتواند کمتر از 8 کاراکتر باشد")
+    except Exception as e:
+        print("❌ فیلد رمز عبور به اشتباه میتواند کمتر از 8 کاراکتر باشد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("رمز عبور با کمتر از 8 کاراکتر", success=True)
+
+
+
+@when("کاربر فیلد پسورد را با بدون وارد کردن حروف بزرگ تکمیل می کند")
+def fill__easy_password_1(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("12345678abs")
+    sleep(0.5)
+    page.get_by_role("button", name="ثبت نام").click()
+    sleep(0.5)
+
+
+
+@then("پیام رمز عبور باید حداقل یک حرف بزرگ داشته باشد نمایش داده می‌شود")
+def check_dashboard_loaded_2(page):
+    try:
+       
+        expect(page.locator("text=رمز عبور باید حداقل یک حرف بزرگ داشته باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد رمز عبور به درستی نمیتواند حداقل یک حرف بزرگ داشته باشد")
+    except Exception as e:
+        print("❌ فیلد رمز عبور به اشتباه میتواند یک حرف بزرگ نداشته باشد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("رمز عبور با حداقل یک حرف بزرگ", success=True)
+
+
+
+@when("کاربر فیلد پسورد را بدون وارد کردن علامت خاص تکمیل می کند")
+def fill__easy_password_2(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("12345678abS")
+    sleep(0.5)
+    page.get_by_role("button", name="ثبت نام").click()
+    sleep(0.5)
+   
+
+@then("پیام رمز عبور باید حداقل یک حرف خاص داشته باشد نمایش داده می‌شود")
+def check_dashboard_loaded_3(page):
+    try:
+       
+        expect(page.locator("text=رمز عبور باید حداقل یک علامت خاص داشته باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد رمز عبور به درستی نمیتواند حداقل یک حرف خاص داشته باشد")
+    except Exception as e:
+        print("❌ فیلد رمز عبور به اشتباه میتواند یک حرف خاص نداشته باشد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("رمز عبور با حداقل یک حرف خاص", success=True)
+
+
+
+    
+    # ==========  تست هفدهم: ثبت ناموفق با ثبت  تکرار رمز عبور متفاوت از رمز عبور
+@pytest.mark.order(17)
+@scenario("../features/signup.feature", "signup without repeat incorrect password")
+def test_signup_without_repeat_incorrect_password():
+    pass
+
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد تکرار رمز عبور تکمیل می کند")
+def fill_signup_without_repeatincorrectpassword(page):
+
+
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پژمان")
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزچی")
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("0081071523")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1367/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد تکرار رمز عبور را برای متفاوت ار فیلد رمز عبور پر می کند")
+def fill__repeat_incorrect_password(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662617")
+    sleep(0.5)
+   
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_signup_without_repeat_incorrect_password(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام رمز عبور و تکرار آن یکسان نمی باشد نمایش داده می‌شود")
+def check_dashboard_loaded(page):
+    try:
+       
+        expect(page.locator("text=رمز عبور و تکرار آن یکسان نمی باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد تکرار رمز عبور به درستی نمیتواند متفاوت از فیلد رمز عبور باشد")
+    except Exception as e:
+        print("❌ فیلد تکرار رمز عبور به اشتباه میتواند متفاوت از فیلد رمز عبور باشد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("تکرار رمز عبور نا برابر با رمز عبور", success=True)
+
+
+
+    # ==========  تست هجدهم: ثبت ناموفق با ثبت  نام و نام خانوادگی با کاراکتر نا مجاز
+
+@pytest.mark.order(18)
+@scenario("../features/signup.feature", "signup without First and last name illegal characters")
+def test_signup_without_First_and_last_name_illegal_characters():
+    pass
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد نام و نام خانوادگی تکمیل می کند")
+def fill_signup_without_First_last_name_illegal_characters(page):
+    
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("0081071523")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1367/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد نام را با کاراکتر های نا مجاز پر می کند")
+def fill__First_name_illegal_characters(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("12@#$%")
+    sleep(0.5)
+   
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_signup_without_First_and_illegal_characters(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام نام باید به صورت فارسی باشد نمایش داده می‌شود")
+def check_dashboard_loaded_1(page):
+    try:
+       
+        expect(page.locator("text=نام باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد نام به درستی درصورت درج کاراکتر نا معتبر پیغام خطا نمایش می دهد ")
+    except Exception as e:
+        print("❌ فیلد نام به اشتباه درصورت درج کاراکتر نا معتبر پیغام خطا نمایش نمی دهد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("درج نام با کاراکتر های نا معتبر", success=True)
+
+
+
+@when("کاربر فیلد نام خانوادگی را با کاراکتر های نا مجاز پر می کند")
+def fill__last_name_illegal_characters(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").click()
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("12@#$%")
+    sleep(0.5)
+    page.get_by_role("button", name="ثبت نام").click()
+    sleep(0.5)
+
+
+
+@then("پیام نام خانوادگی باید به صورت فارسی باشد نمایش داده می‌شود")
+def check_dashboard_loaded_2(page):
+    try:
+       
+        expect(page.locator("text=نام خانوادگی باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد نام خانوادگی به درستی درصورت درج کاراکتر نا معتبر پیغام خطا نمایش می دهد ")
+    except Exception as e:
+        print("❌ فیلد نام خانوادگی به اشتباه درصورت درج کاراکتر نا معتبر پیغام خطا نمایش نمی دهد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("درج نام خانوادگی با کاراکتر های نا معتبر", success=True)
+
+
+
+    # ==========  تست نوزدهم: ثبت ناموفق با ثبت  نام و نام خانوادگی با کاراکتر لاتین
+
+@pytest.mark.order(19)
+@scenario("../features/signup.feature", "signup without English first and last name")
+def test_signup_without_English_first_and_last_name():
+    pass
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد نام و نام خانوادگی تکمیل می کند")
+def fill_signup_without_English_first_last_name(page):
+    
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("0081071523")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1367/02/25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد نام را با کاراکتر های انگلیسی پر می کند")
+def fill_English_first_name(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("Pejman")
+    sleep(0.5)
+   
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_signup_without_English_first_name(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام نام باید به صورت فارسی باشد نمایش داده می‌شود")
+def check_dashboard_loaded_3(page):
+    try:
+       
+        expect(page.locator("text=نام باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد نام به درستی درصورت درج کاراکتر انگلیسی پیغام خطا نمایش می دهد ")
+    except Exception as e:
+        print("❌ فیلد نام به اشتباه درصورت درج کاراکتر انگلیسی پیغام خطا نمایش نمی دهد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("درج نام با کاراکتر های انگلیسی", success=True)
+
+
+
+@when("کاربر فیلد نام خانوادگی را با کاراکتر های انگلیسی پر می کند")
+def fill_English_last_name(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").click()
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("Ranji")
+    sleep(0.5)
+    page.get_by_role("button", name="ثبت نام").click()
+    sleep(0.5)
+
+
+
+@then("پیام نام خانوادگی باید به صورت فارسی باشد نمایش داده می‌شود")
+def check_dashboard_loaded_4(page):
+    try:
+       
+        expect(page.locator("text=نام خانوادگی باید به صورت فارسی باشد")).to_be_visible(timeout=15000)
+        print("✅ فیلد نام خانوادگی به درستی درصورت درج کاراکتر انگلیسی پیغام خطا نمایش می دهد ")
+    except Exception as e:
+        print("❌ فیلد نام خانوادگی به اشتباه درصورت درج کاراکتر انگلیسی پیغام خطا نمایش نمی دهد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("درج نام خانوادگی با کاراکتر های انگلیسی", success=True)
+
+
+
+# ==========  تست بیستم: ثبت ناموفق با ثبت  کد ملی تکراری ==========
+
+@pytest.mark.order(20)
+@scenario("../features/signup.feature", "signup without Duplicate national code")
+def test_signup_without_Duplicate_national_code():
+    pass
+
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به جز فیلد کد ملی تکمیل می کند")
+def fill_signup_without_Duplicate_nationalcode(page):
+
+
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پژمان")
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزچی")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("۱۳۶۷/۰۲/۲5")
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد کد ملی را با کد ملی تکراری پر می کند")
+def fill_Duplicate_national_code(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill("0081071523")    
+    sleep(0.5)
+
+
+@when("کاربر روی دکمه ثبت‌نام کلیک می‌کند")
+def fill_signup_without_Duplicate_national_code(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+@then("پیام متقاضی با این کد ملی قبلا ثبت شده است نمایش داده می‌شود")
+def check_dashboard_loaded(page):
+    try:
+       
+        expect(page.locator("text=متقاضی با این کد ملی قبلا ثبت شده است.")).to_be_visible(timeout=15000)
+        print("✅ خطای کد ملی تکراری به درستی نمایش داده شده")
+    except Exception as e:
+        print("❌ خطای کد ملی تکراری به اشتباه نمایش داده نشده")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        raise e  
+    log_result("ثبت‌نام با کد ملی تکراری", success=True)
+
+
+      
+# # ==========  تست بیست و یکم: ثبت ناموفق با ثبت تاریخ تولد با فرمت نادرست
+
+@pytest.mark.order(21)
+@scenario("../features/signup.feature", "signup without Birth date in wrong format")
+def test_signup_without_Birth_date_in_wrongformat():
+    pass
+
+
+@given("کاربر در صفحه ثبت نام قرار دارد")
+def open_login_page1(page):
+    page.goto("https://online-meetings-test.rayanbourse.ir/auth/login/")
+    sleep(0.5)
+    page.get_by_role("link", name="ثبت نام کنید").click()
+    sleep(0.5)
+
+@when("کاربر تمام فیلد ها را به غیر از فیلد تاریخ تولد تکمیل می کند")
+def fill_signup_without_Birth_date_in_wrongformat1(page):
+
+    national_code1 = generate_valid_national_code()
+    page.get_by_placeholder("نام را وارد کنید").click()
+    sleep(0.5)
+    page.get_by_placeholder("نام را وارد کنید").fill("پژمان")
+    sleep(0.5)
+    page.get_by_placeholder("نام خانوادگی را وارد کنید").fill("رنجی دیزچی")
+    sleep(0.5)
+    page.get_by_placeholder("کد ملی را وارد کنید").click()
+    page.get_by_placeholder("کد ملی را وارد کنید").fill(national_code1)
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click()
+    page.get_by_placeholder("شماره موبایل را وارد کنید").fill("09125243681")
+    sleep(0.5)
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).click()
+    page.get_by_placeholder("رمز عبور را وارد کنید", exact=True).fill("Pejm@n44662618")
+    sleep(0.5)
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").click()
+    page.get_by_placeholder("تکرار رمز عبور را وارد کنید").fill("Pejm@n44662618")
+    sleep(0.5)
+
+
+@when("کاربر فیلد تاریخ تولد را با داده های نا معتبر پر می کند")
+def fill_Birth_date_in_wrongformat11(page):
+
+    sleep(0.5)
+    page.get_by_placeholder("تاریخ تولد").click()
+    page.get_by_placeholder("تاریخ تولد").fill("1367+02+25")
+    sleep(0.5)
+    page.get_by_placeholder("شماره موبایل را وارد کنید").click() 
+    sleep(0.5)
+
+
+@when("کاربر روی دکمه ثبت‌ نام کلیک می‌کند")
+def fill_signup_without_wrongformat11(page):
+
+   page.get_by_role("button", name="ثبت نام").click()
+   sleep(0.5)
+
+
+@then("پیام فرمت تاریخ تولد صحیح نمی باشد نمایش داده می‌شود")
+def check_dashboard_loaded(page):
+    try:
+        expect(page.locator("text=فرمت تاریخ تولد درست نمی باشد")).to_be_visible(timeout=15000)
+        print("✅ فرمت فیلد تاریخ تولد به درستی خطا گرفته شد")
+        log_result("ثبت‌نام با تاریخ تولد با فرمت اشتباه", success=True)
+    except Exception as e:
+        print("❌ فرمت فیلد تاریخ تولد به اشتباه خطا گرفته نشد")
+        page.screenshot(path="./screenshots/failure_dashboard.png")
+        log_result("ثبت‌نام با تاریخ تولد با فرمت اشتباه", success=False)  
+        raise e
